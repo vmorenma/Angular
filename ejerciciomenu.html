@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio 1</title>
+
+</head>
+
+<body>
+<div ng-app="" ng-controller="menuController">
+<p>El primero es</p>
+  <ul>
+    <li ng-repeat="f in menu.primero track by $index">
+      {{ f }}
+    </li>
+  </ul>
+  <p>el segundo es</p>
+<ul>
+    <li ng-repeat="f in menu.segundo track by $index">
+      {{ f }}
+    </li>
+  </ul>
+<p>el postre es</p>
+<ul>
+    <li ng-repeat="f in menu.postre track by $index">
+      {{ f }}
+    </li>
+  </ul>
+  <select id="plato">
+    <option value="primero">primero</option>
+    <option value="segundo">segundo</option>
+    <option value="tercero">tercero</option>
+  </select>
+  <input type="text" ng-model="cambiarPlato"/>
+  <button ng-click="updatePlato()"> Click!</button>
+
+</div>
+
+<script>
+  function menuController($scope) {
+    $scope.menu = {
+      primero:['sopa','paella','calamares'] ,
+      segundo: ['carne','pescado','tortilla'],
+      postre:['fruta','yogur']
+    };
+
+    $scope.updatePlato=function updatePlato(){
+      var select= document.getElementById('plato');
+      if (select.value=='primero'){
+        $scope.menu.primero.push($scope.cambiarPlato);
+      }else if(select.value=='segundo'){
+        $scope.menu.segundo.push($scope.cambiarPlato);
+      }else{
+        $scope.menu.postre.push($scope.cambiarPlato);
+      }
+    }
+
+  }
+</script>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular.min.js"></script>
+</body>
+
+</html>
