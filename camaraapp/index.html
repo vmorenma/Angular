@@ -12,64 +12,22 @@
 		<div style="height: 100px">
 		</div>
 		<div ng-controller="camaraController" id="products" class="row list-group col-lg-10 col-md-10 col-sm-10 col-xs-10 col-lg-offset-1 col-md-offset-1 col-sm-offset-1">
-			<div class="item  col-xs-12 col-lg-4 col-md-4 col-sm-4">
+			<div ng-repeat="a in articulo" class="item  col-xs-12 col-lg-4 col-md-4 col-sm-4">
 				<div class="thumbnail">
-					<img class="group list-group-image img-thumbnail" src="{{articulo[0].img}}" alt="" />
+					<img class="group list-group-image img-thumbnail" src="{{a.img}}" alt="" />
 					<div class="caption">
-						<h4 class="group inner list-group-item-heading">{{articulo[0].nombre}}
+						<h4 class="group inner list-group-item-heading">{{a.nombre}}
 						</h4>
 						<p class="group inner list-group-item-text">
-						{{articulo[0].descripcion}}</p>
+						{{a.descripcion}}</p>
 						<br>
 						<div class="row">
 							<div class="col-xs-12 col-md-6">
 								<p class="fxd lead">
-								{{articulo[0].precio}} €</p>
+								{{a.precio}} €</p>
 							</div>
 							<div class="col-xs-12 col-md-6">
 								<a class="fxd fxd btn btn-success" href="">Compra ahora</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="item  col-xs-12 col-lg-4 col-md-4 col-sm-4">
-				<div class="thumbnail">
-					<img class="group list-group-image img-thumbnail" src="{{articulo[1].img}}" alt="" />
-					<div class="caption">
-						<h4 class="group inner list-group-item-heading">
-						{{articulo[1].nombre}}</h4>
-						<p class="group inner list-group-item-text">
-						{{articulo[1].descripcion}}</p>
-						<br>
-						<div class="row">
-							<div class="col-xs-12 col-md-6">
-								<p class="fxd lead">
-								{{articulo[1].precio}} €</p>
-							</div>
-							<div class="col-xs-12 col-md-6">
-								<a class="fxd btn btn-success" href="">Compra ahora</a>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="item  col-xs-12 col-lg-4 col-md-4 col-sm-4">
-				<div class="thumbnail">
-					<img class="group list-group-image img-thumbnail" src="{{articulo[2].img}}" alt="" />
-					<div class="caption">
-						<h4 class="group inner list-group-item-heading">
-						{{articulo[2].nombre}}</h4>
-						<p class="group inner list-group-item-text">
-						{{articulo[2].descripcion}}</p>
-						<br>
-						<div class="row">
-							<div class="col-xs-12 col-md-6">
-								<p class="fxd lead">
-								{{articulo[2].precio}} €</p>
-							</div>
-							<div class="col-xs-12 col-md-6">
-								<a class="fxd btn btn-success" href="">Compra ahora</a>
 							</div>
 						</div>
 					</div>
